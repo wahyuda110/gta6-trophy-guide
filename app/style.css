@@ -1,0 +1,163 @@
+/* Vice Got a Price! — an offline GTA VI trophy guide. Own look: deep dusk slate,
+   warm amber for the platinum chase, teal for earned. No images, no web fonts. */
+:root {
+  --bg: #14121c;
+  --panel: #1e1b2a;
+  --panel2: #262234;
+  --line: #3a3450;
+  --text: #f2eefc;
+  --muted: #b3abc9;
+  --amber: #ffb02e;
+  --pink: #ff5d8f;
+  --teal: #2fd6b5;
+  --platinum: #bfe3ff;
+  --gold: #ffd75e;
+  --silver: #d7dce6;
+  --bronze: #e0a06a;
+  --danger: #ff6b6b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  line-height: 1.5;
+}
+a { color: var(--amber); }
+button, select, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+
+.masthead {
+  background: linear-gradient(135deg, #2a1445 0%, #57203f 55%, #8a3b1e 100%);
+  border-bottom: 3px solid var(--amber);
+}
+.masthead-inner { max-width: 1080px; margin: 0 auto; padding: 28px 20px 22px; }
+.kicker { margin: 0 0 6px; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; color: #ffd9a0; }
+h1 { margin: 0; font-size: 40px; line-height: 1.1; }
+.subtitle { margin: 8px 0 0; max-width: 720px; color: #f3e2ff; }
+.progress-wrap { margin-top: 18px; max-width: 720px; }
+.progress-line { display: flex; justify-content: space-between; font-weight: 700; }
+.progress-bar { height: 12px; margin-top: 6px; background: #00000066; border-radius: 6px; overflow: hidden; }
+.progress-bar > div { height: 100%; background: linear-gradient(90deg, var(--amber), var(--pink)); transition: width .3s; }
+.progress-detail { margin: 6px 0 0; color: #ffd9a0; font-size: 14px; }
+
+.views { display: flex; gap: 8px; max-width: 1080px; margin: 16px auto 0; padding: 0 20px; }
+.view-tab {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 8px 8px 0 0;
+  padding: 10px 18px; font-weight: 700; color: var(--muted);
+}
+.view-tab.active { background: var(--panel2); color: var(--text); border-bottom-color: var(--panel2); }
+
+.controls {
+  max-width: 1080px; margin: 0 auto; padding: 16px 20px;
+  background: var(--panel2); border: 1px solid var(--line); border-radius: 0 8px 8px 8px;
+  display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center;
+}
+.controls label { font-weight: 600; font-size: 14px; }
+.search input, .grade select {
+  background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
+  padding: 8px 10px; margin-left: 6px; color: var(--text);
+}
+.search input { min-width: 260px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  background: var(--bg); border: 1px solid var(--line); border-radius: 999px;
+  padding: 6px 12px; font-size: 14px; color: var(--muted);
+}
+.chip.active { background: var(--amber); border-color: var(--amber); color: #241300; font-weight: 700; }
+.spoiler-toggle { display: flex; gap: 6px; align-items: center; }
+.io { display: flex; gap: 8px; align-items: center; margin-left: auto; }
+.io button, .io-panel button, .import-btn {
+  background: var(--amber); color: #241300; border: 0; border-radius: 6px;
+  padding: 8px 14px; font-weight: 700; display: inline-block;
+}
+.import-btn { background: var(--panel); color: var(--text); border: 1px solid var(--line); }
+.import-btn input { display: none; }
+.controls-note { flex-basis: 100%; margin: 0; color: var(--muted); font-size: 14px; }
+
+main { max-width: 1080px; margin: 0 auto; padding: 18px 20px 8px; }
+.view-intro { color: var(--muted); max-width: 760px; }
+h2 { font-size: 26px; margin: 6px 0 4px; }
+h3 { font-size: 18px; margin: 22px 0 6px; }
+
+.trophy-list { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+.trophy {
+  display: grid; grid-template-columns: 34px 1fr auto; gap: 12px; align-items: start;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+}
+.trophy.earned { border-color: var(--teal); background: #1d2b29; }
+.trophy input[type="checkbox"] { width: 22px; height: 22px; margin-top: 3px; accent-color: var(--teal); }
+.trophy-name { font-weight: 700; font-size: 17px; }
+.trophy-name button {
+  background: none; border: 0; padding: 0; text-align: left;
+  font-weight: 700; font-size: 17px; color: var(--text); text-decoration: underline;
+  text-decoration-color: var(--amber); text-underline-offset: 3px;
+}
+.trophy-desc { color: var(--muted); margin-top: 2px; }
+.trophy-guide-snippet { margin-top: 6px; font-size: 14px; }
+.trophy-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.pill {
+  font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  border-radius: 999px; padding: 2px 9px; border: 1px solid var(--line); color: var(--muted);
+}
+.pill.platinum { color: #12202e; background: var(--platinum); border-color: var(--platinum); }
+.pill.gold { color: #241300; background: var(--gold); border-color: var(--gold); }
+.pill.silver { color: #1c2230; background: var(--silver); border-color: var(--silver); }
+.pill.bronze { color: #2a1503; background: var(--bronze); border-color: var(--bronze); }
+.pill.missable { color: #fff; background: #a11; border-color: #c33; }
+.pill.hidden-flag { color: var(--pink); border-color: var(--pink); }
+.pill.earned-flag { color: #06281f; background: var(--teal); border-color: var(--teal); }
+.trophy-grade { text-align: right; }
+.empty-note { color: var(--muted); }
+
+.detail {
+  margin: 22px 0; padding: 18px 20px; border: 2px solid var(--amber);
+  border-radius: 12px; background: var(--panel2);
+}
+.detail h2 { margin-top: 0; }
+.detail .official { color: var(--muted); }
+.detail .official strong { color: var(--text); }
+.detail .guide-text { font-size: 17px; }
+.detail .missable-warning {
+  background: #4a1010; border: 1px solid #c33; border-radius: 8px; padding: 10px 12px; font-weight: 600;
+}
+.detail .sources { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 10px; }
+.detail .sources li { margin: 4px 0; }
+.detail .close-detail { margin-top: 12px; background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 8px 14px; }
+
+.roadmap { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 12px; }
+.roadmap li {
+  background: var(--panel); border: 1px solid var(--line); border-left: 6px solid var(--amber);
+  border-radius: 10px; padding: 14px 16px;
+}
+.roadmap li h3 { margin: 0 0 4px; }
+.roadmap li h3 .stage-time { float: right; font-size: 13px; color: var(--muted); font-weight: 400; }
+.roadmap li p { margin: 4px 0; color: var(--muted); }
+.roadmap .stage-trophies { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.roadmap .stage-trophies button {
+  background: var(--bg); border: 1px solid var(--line); border-radius: 999px;
+  padding: 4px 10px; font-size: 13px; color: var(--text);
+}
+.roadmap .stage-trophies button.earned { border-color: var(--teal); color: var(--teal); }
+.roadmap-sources { color: var(--muted); font-size: 14px; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 12px 0; }
+.stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
+.stat b { display: block; font-size: 26px; }
+.stat span { color: var(--muted); font-size: 14px; }
+.io-panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+.io-panel .danger { background: var(--danger); color: #fff; }
+.io-message { color: var(--teal); font-weight: 600; }
+.earned-list { list-style: none; padding: 0; display: grid; gap: 6px; }
+.earned-list li { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; }
+
+footer { max-width: 1080px; margin: 8px auto 40px; padding: 0 20px; color: var(--muted); font-size: 14px; }
+footer p { margin: 6px 0; }
+
+/* Deterministic guide screenshot: hide the long checklist so the open guide
+   sits directly under the controls in the first viewport. */
+body.shot-guide #trophyList,
+body.shot-guide .view-intro,
+body.shot-guide .subtitle,
+body.shot-guide .controls-note { display: none; }

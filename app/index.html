@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide &amp; Tracker — Vice Got a Price!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies &middot; offline guide</p>
+    <h1>Vice Got a Price!</h1>
+    <p class="subtitle">Every GTA VI trophy, with a cited guide to each one, a platinum roadmap, and a tracker that saves in your browser. No account, no network — the whole guide runs from its own files.</p>
+    <div class="progress-wrap" role="status" aria-live="polite">
+      <div class="progress-line"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+      <div class="progress-bar"><div id="progressFill" style="width:0%"></div></div>
+      <p class="progress-detail" id="progressDetail"></p>
+    </div>
+  </div>
+</header>
+
+<nav class="views" aria-label="Views">
+  <button type="button" class="view-tab active" data-view="checklist">Checklist</button>
+  <button type="button" class="view-tab" data-view="roadmap">Platinum roadmap</button>
+  <button type="button" class="view-tab" data-view="progress">Progress &amp; export</button>
+</nav>
+
+<section class="controls" aria-label="Filters and settings">
+  <label class="search">Search
+    <input id="search" type="search" placeholder="Trophy name, mission, or keyword…" autocomplete="off">
+  </label>
+  <div class="chips" id="kindChips" role="group" aria-label="Filter by kind">
+    <button type="button" class="chip active" data-kind="all">All 55</button>
+    <button type="button" class="chip" data-kind="story">Story</button>
+    <button type="button" class="chip" data-kind="missable">⚠ Missable</button>
+    <button type="button" class="chip" data-kind="collectibles">Collectibles</button>
+    <button type="button" class="chip" data-kind="activities">Activities</button>
+    <button type="button" class="chip" data-kind="online">Online</button>
+    <button type="button" class="chip" data-kind="platinum">Platinum</button>
+    <button type="button" class="chip" data-kind="completion">100%</button>
+  </div>
+  <label class="grade">Grade
+    <select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="spoiler-toggle"><input id="spoilers" type="checkbox"> Hide story spoilers</label>
+  <div class="io">
+    <button id="exportBtn" type="button">Export progress</button>
+    <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+  </div>
+  <p class="controls-note" id="filterNote"></p>
+</section>
+
+<main>
+  <section id="view-checklist" class="view">
+    <p class="view-intro">Tick a trophy when you earn it — progress saves in this browser. Click any trophy for its full guide and sources. Story trophies are hidden on PSN until earned; turn on “Hide story spoilers” to keep their names secret until you tick them.</p>
+    <ul id="trophyList" class="trophy-list"></ul>
+    <p id="emptyNote" class="empty-note" hidden></p>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2 id="roadmapTitle">Platinum roadmap</h2>
+    <p class="view-intro" id="roadmapSummary"></p>
+    <ol id="roadmapStages" class="roadmap"></ol>
+    <p class="roadmap-sources" id="roadmapSources"></p>
+  </section>
+
+  <section id="view-progress" class="view" hidden>
+    <h2>Progress &amp; export</h2>
+    <div class="stats" id="statsGrid"></div>
+    <div class="io-panel">
+      <h3>Take your progress with you</h3>
+      <p>Export saves your earned trophies to a file. Import reads one back — it only accepts trophy names from this guide's official list, and it replaces what is ticked here.</p>
+      <p><button id="exportBtn2" type="button">Export progress (.json)</button>
+      <label class="import-btn">Import progress <input id="importFile2" type="file" accept="application/json,.json"></label></p>
+      <p><button id="resetBtn" type="button" class="danger">Clear all progress</button></p>
+      <p id="ioMessage" class="io-message" role="status"></p>
+    </div>
+    <h3>Earned so far</h3>
+    <ul id="earnedList" class="earned-list"></ul>
+  </section>
+
+  <section id="detail" class="detail" hidden aria-live="polite"></section>
+</main>
+
+<footer>
+  <p>Names and descriptions are the official PlayStation trophy list, as mirrored by Exophase and PSNProfiles. Guides are written for this entry in its own words and cite their sources beside each trophy. GTA VI launched 19 November 2026: where no published walkthrough exists yet, the guide says so and plans from the official description alone. No Rockstar logo, artwork or game screenshots are used. This guide works fully offline.</p>
+  <p>Sources consulted: PowerPyx GTA 6 Trophy Guide &amp; Roadmap, PowerPyx Meditation Spot Locations, EGamers GTA 6 Trophy List, Insider Gaming GTA 6 Trophy List, and the official PSN list via Exophase / PSNProfiles.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
